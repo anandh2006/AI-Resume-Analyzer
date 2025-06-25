@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Python Developer",
+    "skills": ["python", "flask", "api", "sql"]
+  },
+  {
+    "title": "Data Analyst",
+    "skills": ["excel", "sql", "power bi", "python"]
+  }
+]
