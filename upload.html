@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analyzer</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f9f9f9;
+            padding: 40px;
+        }
+        .upload-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input[type=file], input[type=submit] {
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-box">
+        <h2>Upload Resume PDF</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf" required><br>
+            <input type="submit" value="Analyze">
+        </form>
+    </div>
+</body>
+</html>

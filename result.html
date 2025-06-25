@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analysis Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f1f1f1;
+        }
+        .result-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .highlight {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: square;
+        }
+    </style>
+</head>
+<body>
+    <h1>Extracted Resume Text</h1>
+    <div class="result-section">
+        <pre>{{ resume_text }}</pre>
+    </div>
+
+    <h2>Extracted Skills</h2>
+    <div class="result-section">
+        {% if extracted_skills %}
+            <ul>
+            {% for skill in extracted_skills %}
+                <li class="highlight">{{ skill }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No relevant skills found in the resume.</p>
+        {% endif %}
+    </div>
+
+    <h2>Matching Job Roles</h2>
+    {% for job in matched_jobs %}
+    <div class="result-section">
+        <h3>{{ job.title }}</h3>
+        <p>Resume Score: <span class="highlight">{{ job.score }}%</span></p>
+        <p>Missing Skills:</p>
+        <ul>
+            {% for skill in job.missing_skills %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>
